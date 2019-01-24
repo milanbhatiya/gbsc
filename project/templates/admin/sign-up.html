@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Gesture Based Smart Communicator</title>
+
+	<link href="../../static/adminResources/images/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="../../static/adminResources/images/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="../../static/adminResources/images/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="../../static/adminResources/images/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+	<link href="../../static/adminResources/images/favicon.png" rel="icon" type="image/png">
+	<link href="../../static/adminResources/images/favicon.ico" rel="shortcut icon">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" href="../../static/adminResources/css/login.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/main.css">
+</head>
+<body class="with-side-menu">
+
+
+    <div class="page-center">
+        <div class="page-center-in">
+            <div class="container-fluid">
+                <form class="sign-box">
+                    <div class="sign-avatar no-photo">&plus;</div>
+                    <header class="sign-title">Sign Up</header>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="First Name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Last Name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="E-mail"/>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-control">
+                          <label style="color: gray">
+                              <input type="radio" class="ml-2" name="gender" value="male" checked > Male
+                              <input type="radio" class="ml-3" name="gender" value="female"> Female
+                              <input type="radio" class="ml-3" name="gender" value="other"> Other
+                          </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Address" rows="3" cols="10"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
+                    <p class="sign-note">Already have an account? <a href="sign-in.html">Sign in</a></p>
+                    <!--<button type="button" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>-->
+                </form>
+            </div>
+        </div>
+    </div><!--.page-center-->
+
+<script src="../../static/adminResources/js/jquery-3.2.1.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/tether.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/plugins.js"></script>
+    <script type="text/javascript" src="../../static/adminResources/js/jquery.matchHeight.min.js"></script>
+    <script>
+        $(function() {
+            $('.page-center').matchHeight({
+                target: $('html')
+            });
+
+            $(window).resize(function(){
+                setTimeout(function(){
+                    $('.page-center').matchHeight({ remove: true });
+                    $('.page-center').matchHeight({
+                        target: $('html')
+                    });
+                },100);
+            });
+        });
+    </script>
+<script src="../../static/adminResources/js/app.js"></script>
+</body>
+</html>
