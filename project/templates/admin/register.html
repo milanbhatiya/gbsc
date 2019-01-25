@@ -29,32 +29,32 @@
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box" action="/register" method="post">
+                <form class="sign-box" action="/insertRegister" method="post">
                     <div class="sign-avatar no-photo">&plus;</div>
                     <header class="sign-title">Sign Up</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="RegisterFirstname" placeholder="First Name"/>
+                        <input type="text" class="form-control" name="registerFirstname" placeholder="First Name"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control"  name="RegisterLastname" placeholder="Last Name"/>
+                        <input type="text" class="form-control"  name="registerLastname" placeholder="Last Name"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="RegisterEmailid" placeholder="E-mail"/>
+                        <input type="text" class="form-control" name="registerEmailid" placeholder="E-mail"/>
                     </div>
                     <div class="form-group">
                         <div class="form-control">
                           <label style="color: gray">
-                              <input type="radio" class="ml-2" name="RegisterGender" value="male" checked > Male
-                              <input type="radio" class="ml-3" name="RegisterGender" value="female"> Female
-                              <input type="radio" class="ml-3" name="RegisterGender" value="other"> Other
+                              <input type="radio" class="ml-2" name="registerGender" value="male" checked > Male
+                              <input type="radio" class="ml-3" name="registerGender" value="female"> Female
+                              <input type="radio" class="ml-3" name="registerGender" value="other"> Other
                           </label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="RegisterAddress" placeholder="Address" rows="3" cols="10"></textarea>
+                        <textarea class="form-control" name="registerAddress" placeholder="Address" rows="3" cols="10"></textarea>
                     </div>
                     <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
-                    <p class="sign-note">Already have an account? <a href="sign-in.html">Sign in</a></p>
+                    <p class="sign-note">Already have an account? <a href="/login">Sign in</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->

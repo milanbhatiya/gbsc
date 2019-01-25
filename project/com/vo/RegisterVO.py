@@ -2,8 +2,8 @@ from wtforms import *
 
 class RegisterVO:
     registerId=IntegerField
-    registerFirstname=StringField
-    registerLastname=StringField
-    registerEmailid=StringField
+    registerFirstName=StringField
+    registerLastName=StringField
     registerAddress=StringField
     registerGender=StringField
+    register_LoginId=StringField
