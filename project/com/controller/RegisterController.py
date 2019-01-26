@@ -5,20 +5,13 @@ from project.com.vo.RegisterVO import RegisterVO
 from project.com.dao.LoginDAO import LoginDAO
 from project.com.vo.LoginVO import LoginVO
 
-@app.route('/')
-def loadIndex():
-    return render_template('admin/index.html')
 @app.route('/register')
 def register():
     return render_template('admin/register.html')
 
 @app.route('/login')
 def login():
-    return render_template('admin/sign-in.html')
-
-# @app.route('/register')
-# def register():
-#     return render_template('admin/register.html')
+    return render_template('admin/login.html')
 
 @app.route('/insertRegister', methods=['POST'])
 def insertRegister():
@@ -47,7 +40,5 @@ def insertRegister():
     registerVO.register_LoginId=str(loginDAO.searchLoginId(loginVO)[0].values()[0])
     print registerVO.register_LoginId
     registerDAO.insertRegister(registerVO)
-
-
 
     return render_template('admin/welcome.html')

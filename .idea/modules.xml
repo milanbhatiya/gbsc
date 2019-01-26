@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gesturebasedsmartcommunicator.iml" filepath="$PROJECT_DIR$/.idea/gesturebasedsmartcommunicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gbsc.iml" filepath="$PROJECT_DIR$/.idea/gbsc.iml" />
     </modules>
   </component>
 </project>
