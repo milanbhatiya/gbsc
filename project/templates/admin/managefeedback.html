@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../../static/adminResources/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../static/adminResources/css/main.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/ratingstar.css">
 </head>
 <body class="with-side-menu">
     {% block header %}
@@ -64,12 +65,23 @@
 										   data-validation="[NOTEMPTY]" cols="30" rows="10"></textarea>
 								</fieldset>
                                 <fieldset class="form-group">
-                                    <span class="heading">User Rating</span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
+                                    <label class="form-label">User Rating</label>
+                                    <div class="form-group ">
+                                        <div class="rating">
+{#                                            <h4> <span class="flaticon-house-key"></span>User Rating</h4><br/>#}
+                                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!"><span class="fa fa-star checked"></span></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good"><span class="fa fa-star checked"></span></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh"><span class="fa fa-star checked"></span></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad"><span class="fa fa-star checked"></span></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time"><span class="fa fa-star checked"></span></label>
+                                        </div>
+                                    </div>
+{#                                    <span class="heading">User Rating</span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
                                 </fieldset>
 								<fieldset class="form-group">
 									<button type="submit" class="btn">Submit</button>

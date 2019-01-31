@@ -29,7 +29,7 @@
             </span>
             <ul>
 {#                <li><a href="index.html"><span class="lbl">Default</span><span class="label label-custom label-pill label-danger">new</span></a></li>#}
-                <li><a href="dashboard-top-menu.html"><span class="lbl">View Users</span></a></li>
+                <li><a href="{{ url_for('viewUsers') }}"><span class="lbl">View Users</span></a></li>
 {#                <li><a href="dashboard-addl-menu.html"><span class="lbl">Submenu</span></a></li>#}
 {#                <li><a href="side-menu-avatar.html"><span class="lbl">Menu with avatar</span></a></li>#}
 {#                <li><a href="side-menu-avatar.html"><span class="lbl">Compact menu with avatar</span></a></li>#}
@@ -69,7 +69,7 @@
             </span>
             <ul>
 {#                <li><a href="index.html"><span class="lbl">Default</span><span class="label label-custom label-pill label-danger">new</span></a></li>#}
-{#{                <li><a href="{{ url_for('managecomplain') }}"><span class="lbl">View Complain</span></a></li>#}
+{                <li><a href="admin/managecomplain.html"><span class="lbl">View Complain</span></a></li>
 {#                <li><a href="dashboard-addl-menu.html"><span class="lbl">Submenu</span></a></li>#}
 {#                <li><a href="side-menu-avatar.html"><span class="lbl">Menu with avatar</span></a></li>#}
 {#                <li><a href="side-menu-avatar.html"><span class="lbl">Compact menu with avatar</span></a></li>#}

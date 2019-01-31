@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>StartUI - Premium Bootstrap 4 Admin Dashboard Template</title>
+	<title>GBSC - Login</title>
 
 	<link href="../../static/adminResources/images/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
 	<link href="../../static/adminResources/images/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
@@ -45,11 +45,11 @@
                             <label for="signed-in">Keep me signed in</label>
                         </div>
                         <div class="float-right reset">
-                            <a href="reset-password.html">Reset Password</a>
+                            <a href="{{ url_for('resetPassword') }}">Reset Password</a>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-rounded">Sign in</button>
-                    <p class="sign-note">New to our website? <a href="/register">Sign up</a></p>
+                    <p class="sign-note">New to our website? <a href="{{ url_for('loadRegister') }}">Sign up</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
