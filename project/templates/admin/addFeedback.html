@@ -21,14 +21,73 @@
     <link rel="stylesheet" href="../../static/adminResources/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/adminResources/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../static/adminResources/css/main.css">
+    <link rel="stylesheet" href="../../static/adminResources/css/ratingstar.css">
+    <style type="text/css">
+        .rating {
+            float:left;
+        }
+
+        /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+           follow these rules. Every browser that supports :checked also supports :not(), so
+           it doesn’t make the test unnecessarily selective */
+        .rating:not(:checked) > input {
+            position:absolute;
+            top:-9999px;
+            clip:rect(0,0,0,0);
+        }
+
+        .rating:not(:checked) > label {
+            float:right;
+            width:1.2em;
+            padding:0em;
+            overflow:hidden;
+            white-space:nowrap;
+            cursor:pointer;
+            font-size:200%;
+            line-height:1.2;
+            color:#ddd;
+            text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating:not(:checked) > label:before {
+            content: ' ';
+        }
+
+        .rating > input:checked ~ label {
+            color: #f70;
+            text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: gold;
+            text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > input:checked ~ label:hover,
+        .rating > input:checked ~ label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label {
+            color: #ea0;
+            text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+        }
+
+        .rating > label:active {
+            position:relative;
+            top:2px;
+            left:2px;
+        }
+
+        </style>
 </head>
 <body class="with-side-menu">
     {% block header %}
-        {% include 'admin/Header.html' %}
+        {% include 'admin/adminHeader.html' %}
     {% endblock %}
 
     {% block sidebar %}
-        {% include 'admin/Leftmenu.html' %}
+        {% include 'admin/adminSidebar.html' %}
     {% endblock %}
 	<div class="page-content">
 		<div class="container-fluid">
@@ -36,11 +95,11 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Manage Complains</h3>
+							<h2>View Feedback</h2>
 							<ol class="breadcrumb breadcrumb-simple">
 								<li><a href="#">Home</a></li>
-								<li><a href="#">Forms</a></li>
-								<li class="active">Manage Complains</li>
+								<li><a href="#">Manage Feedback</a></li>
+								<li class="active">View Feedback</li>
 							</ol>
 						</div>
 					</div>
@@ -53,14 +112,7 @@
 						<div class="col-md-6">
 							<form id="form-signin_v1" name="form-signin_v1" method="POST">
 								<fieldset class="form-group">
-									<label class="form-label">Subject</label>
-									<input name="signin_v1[username]"
-										   type="text"
-										   class="form-control"
-										   data-validation="[NOTEMPTY]">
-								</fieldset>
-								<fieldset class="form-group">
-									<label class="form-label">Description</label>
+									<label class="form-label">Feedback</label>
 {#									<input name="signin_v1[password]"#}
 {#										   type="password"#}
 {#										   class="form-control"#}
@@ -68,18 +120,35 @@
                                     <textarea name="signin_v1[password]"
 										   type="password"
 										   class="form-control"
-										   data-validation="[NOTEMPTY]" cols="30" rows="8"></textarea>
+										   data-validation="[NOTEMPTY]" cols="30" rows="10"></textarea>
 								</fieldset>
-                                <fieldset name="form-group">
-                                    <label class="form-label">Upload File</label>
-									<input name="signin_v1[username]"
-										   type="file"
-										   class="form-control"
-										   data-validation="[NOTEMPTY]">
+                                <fieldset class="form-group">
+                                    <label class="form-label">User Rating</label>
+                                    <div class="form-group">
+                                        <div class="rating">
+{#                                            <h4> <span class="flaticon-house-key"></span>User Rating</h4><br/>#}
+                                            <input type="radio" id="star5" name="rating" value="5" />
+                                                <label for="star5" title="Rocks!"><span class="fa fa-star"></span></label>
+                                            <input type="radio" id="star4" name="rating" value="4" />
+                                                <label for="star4" title="Pretty good"><span class="fa fa-star"></span></label>
+                                            <input type="radio" id="star3" name="rating" value="3" />
+                                                <label for="star3" title="Meh"><span class="fa fa-star"></span></label>
+                                            <input type="radio" id="star2" name="rating" value="2" />
+                                                <label for="star2" title="Kind a bad"><span class="fa fa-star"></span></label>
+                                            <input type="radio" id="star1" name="rating" value="1" />
+                                                <label for="star1" title="Sucks big time"><span class="fa fa-star"></span></label>
+                                        </div>
+                                    </div>
+{#                                    <span class="heading">User Rating</span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
+{#                                    <span class="glyphicon glyphicon-star"></span>#}
                                 </fieldset>
-								<fieldset class="form-group m-3">
+								<fieldset class="form-group">
 									<button type="submit" class="btn">Submit</button>
-									<button type="submit" class="btn ml-5">Cancel</button>
+									<button type="submit" class="btn">Cancel</button>
 								</fieldset>
 							</form>
 						</div>
@@ -104,7 +173,7 @@
 {#								</fieldset>#}
 {#							</form>#}
 {#						</div>#}
-					</div><!--.row-->
+{#					</div><!--.row-->#}
 
 {#					<div class="row m-t-lg">#}
 {#						<div class="col-md-6">#}

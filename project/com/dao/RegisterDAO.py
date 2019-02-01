@@ -8,5 +8,3 @@ class RegisterDAO:
         connection.commit()
         cursor1.close()
         connection.close()
-
-

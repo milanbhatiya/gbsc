@@ -24,11 +24,11 @@
 </head>
 <body class="with-side-menu">
     {% block header %}
-        {% include 'admin/Header.html' %}
+        {% include 'admin/adminHeader.html' %}
     {% endblock %}
 
     {% block sidebar %}
-        {% include 'admin/Leftmenu.html' %}
+        {% include 'admin/adminSidebar.html' %}
     {% endblock %}
 	<div class="page-content">
 		<div class="container-fluid">
@@ -36,11 +36,11 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Manage Dataset</h3>
+							<h2>View Complaints</h2>
 							<ol class="breadcrumb breadcrumb-simple">
 								<li><a href="#">Home</a></li>
-								<li><a href="#">Forms</a></li>
-								<li class="active">Manage Dataset</li>
+								<li><a href="#">Manage Complaints</a></li>
+								<li class="active">View Complaints</li>
 							</ol>
 						</div>
 					</div>
@@ -53,12 +53,12 @@
 						<div class="col-md-6">
 							<form id="form-signin_v1" name="form-signin_v1" method="POST">
 								<fieldset class="form-group">
-                                    <label class="form-label">Upload File</label>
-                                    <input name="Upload File"
-                                            type="file"
-                                            class="form-control"
-                                            data-validation="[NOTEMPTY]">
-                                </fieldset>
+									<label class="form-label">Subject</label>
+									<input name="signin_v1[username]"
+										   type="text"
+										   class="form-control"
+										   data-validation="[NOTEMPTY]">
+								</fieldset>
 								<fieldset class="form-group">
 									<label class="form-label">Description</label>
 {#									<input name="signin_v1[password]"#}
@@ -70,9 +70,16 @@
 										   class="form-control"
 										   data-validation="[NOTEMPTY]" cols="30" rows="8"></textarea>
 								</fieldset>
-								<fieldset class="form-group">
+                                <fieldset name="form-group">
+                                    <label class="form-label">Upload File</label>
+									<input name="signin_v1[username]"
+										   type="file"
+										   class="form-control"
+										   data-validation="[NOTEMPTY]">
+                                </fieldset>
+								<fieldset class="form-group m-3">
 									<button type="submit" class="btn">Submit</button>
-									<button type="submit" class="btn">Cancel</button>
+									<button type="submit" class="btn ml-5">Cancel</button>
 								</fieldset>
 							</form>
 						</div>
@@ -97,7 +104,7 @@
 {#								</fieldset>#}
 {#							</form>#}
 {#						</div>#}
-{#					</div><!--.row-->#}
+					</div><!--.row-->
 
 {#					<div class="row m-t-lg">#}
 {#						<div class="col-md-6">#}

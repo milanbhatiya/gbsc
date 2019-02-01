@@ -1,4 +1,4 @@
 from project.com.dao import *
 
-class UsersDAO:
+class FeedbackDAO:
     pass
