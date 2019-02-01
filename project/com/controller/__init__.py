@@ -6,4 +6,4 @@ import project.com.controller.UsersController
 
 @app.route('/')
 def loadLogin():
-    return render_template('admin/viewUsers.html')
+    return render_template('admin/register.html')
