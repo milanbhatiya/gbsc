@@ -9,4 +9,13 @@ def viewFeedback():
 
 @app.route('/addFeedback')
 def addFeedback():
-    return render_template('admin/addFeedback.html')
+    feedbackDAO = FeedbackDAO()
+    feedbackVO = FeedbackVO()
+
+    feedbackText = request.form['feedbackText']
+    feedbackRating = request.form['feedbackRating']
+
+    feedbackVO.feedbackText=feedbackText
+    feedbackVO.feedbackRating=feedbackRating
+    return render_template('admin/viewFeedback.html')
+

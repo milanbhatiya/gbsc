@@ -79,6 +79,19 @@
 							<td>61</td>
 							<td>$320,800</td>
 						</tr>
+                        {% for i in datasetDict %}
+                        <tr>
+							<td>{{ i.datasetName }}</td>
+                            <td>{{ i.datasetPath }}</td>
+							<td>{{ i.datasetDescription }}</td>
+							<td><img src="../../static/adminResources/dataset/{{ i.datasetName }}" height="30px" width="30px"></td>
+							<td>
+                                <a  href="/deleteDataset?datasetId={{ i.datasetId }}" >delete</a>
+                               <!-- <a href="/deleteDataset?datasetId={{ i.datasetId }}" >deactive</a> -->
+
+                            </td>
+						</tr>
+                        {% endfor %}
 						</tbody>
 					</table>
 				</div>

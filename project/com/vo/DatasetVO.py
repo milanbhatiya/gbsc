@@ -1,4 +1,8 @@
 from wtforms import *
 
 class DatasetVO:
-    pass
+    datasetId=IntegerField
+    datasetName=StringField
+    datasetPath=StringField
+    datasetDescription=StringField
+    datasetActiveStatus=StringField

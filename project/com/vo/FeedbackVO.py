@@ -1,4 +1,9 @@
 from wtforms import *
 
 class FeedbackVO:
-    pass
+    feedbackId=IntegerField
+    feedbackText=StringField
+    feedbackRating=StringField
+    feedbackDate=StringField
+    feedbackTime=StringField
+    feedback_LoginId=StringField
