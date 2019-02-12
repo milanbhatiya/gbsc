@@ -1,8 +1,9 @@
 <header class="site-header">
 	    <div class="container-fluid">
 	        <a href="/" class="site-logo">
-	            <img class="hidden-md-down" src="../../static/adminResources/images/logo-2.png" alt="Gesture Based Smart Communicator">
-	            <img class="hidden-lg-down" src="../../static/adminResources/images/logo-2-mob.png" alt="">
+{#                <h3 class="hidden-md-down">Gesture Based Smart Communicator</h3>#}
+	            <img class="hidden-md-down "height="273" width="100" src="../../static/adminResources/images/gbsc.png" alt="Gesture Based Smart Communicator">
+	            <img class="hidden-lg-down" height="137" width="50" src="../../static/adminResources/images/gbsc.png" alt="">
 	        </a>
 
 	        <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
@@ -191,6 +192,7 @@
 	                            <div class="dropdown-divider"></div>
 	                            <a class="dropdown-item" href="{{ url_for('loadLogin') }}"><span class="font-icon glyphicon glyphicon-log-out"></span>Login</a>
                                 <a class="dropdown-item" href="{{ url_for('loadRegister') }}"><span class="font-icon glyphicon glyphicon-log-out"></span>Register</a>
+                                <a class="dropdown-item" href="{{ url_for('logout') }}"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
 	                        </div>
 	                    </div>
 

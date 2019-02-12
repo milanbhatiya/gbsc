@@ -52,14 +52,14 @@
 				<div class="card-block">
 					<div class="row">
 						<div class="col-md-6">
-							<form id="addFeedback" name="addFeedback" method="POST">
+							<form id="addFeedback" action="/addFeedback" name="addFeedback" method="POST">
 								<fieldset class="form-group">
 									<label class="form-label">Feedback</label>
 {#									<input name="signin_v1[password]"#}
 {#										   type="password"#}
 {#										   class="form-control"#}
 {#										   data-validation="[NOTEMPTY]">#}
-                                    <textarea name="feedbackText"
+                                    <textarea name="feedbackDescription"
 										   type="text"
 										   class="form-control"
 										   data-validation="[NOTEMPTY]" cols="30" rows="10"></textarea>

@@ -51,10 +51,10 @@
 				<div class="card-block">
 					<div class="row">
 						<div class="col-md-6">
-							<form id="form-signin_v1" action="/addDataset" name="form-signin_v1" method="POST">
+							<form id="form-signin_v1" action="/insertDataset" name="form-signin_v1" enctype="multipart/form-data" method="POST">
 								<fieldset class="form-group">
                                     <label class="form-label">Upload File</label>
-                                    <input name="Upload File"
+                                    <input name="datasetFile"
                                             type="file"
                                             class="form-control"
                                             data-validation="[NOTEMPTY]">
@@ -65,7 +65,7 @@
 {#										   type="password"#}
 {#										   class="form-control"#}
 {#										   data-validation="[NOTEMPTY]">#}
-                                    <textarea name="signin_v1[password]"
+                                    <textarea name="datasetDescription"
 										   type="password"
 										   class="form-control"
 										   data-validation="[NOTEMPTY]" cols="30" rows="8"></textarea>

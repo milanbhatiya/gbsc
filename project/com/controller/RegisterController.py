@@ -26,54 +26,41 @@ def insertRegister():
     loginDAO=LoginDAO()
     loginVO=LoginVO()
 
-    registerPassword = ''.join((random.choice(string.ascii_letters + string.digits)) for x in range(8))
-
-    registerFirstname=request.form['registerFirstname']
-    registerLastname=request.form['registerLastname']
-    registerGender=request.form['registerGender']
+    registerOrganizationname=request.form['registerOsrganizationname']
+    registerContact=request.form['registerContact']
+    registerCategory=request.form['registerCategory']
     registerAddress=request.form['registerAddress']
     loginEmailId = request.form['registerEmailid']
+    registerPassword = ''.join((random.choice(string.ascii_letters + string.digits)) for x in range(8))
 
 
-    registerVO.registerFirstName=registerFirstname
-    registerVO.registerLastName=registerLastname
-    registerVO.registerGender=registerGender
+    registerVO.registerOoganizationname=registerOrganizationname
+    registerVO.registercontact=registerContact
+    registerVO.registerCategory=registerCategory
     registerVO.registerAddress=registerAddress
+    registerVO.register_LoginId = str(loginDAO.searchLoginId(loginVO)[0].values()[0])
+
     loginVO.loginEmailId=loginEmailId
     loginVO.loginPassword=registerPassword
     loginVO.loginRole='user'
 
+    print("registerPassword=" + registerPassword)
+    fromaddr = "gesturebasedsmartcommunicator@gmail.com"
+    toaddr = loginVO.loginEmailId
+    msg = MIMEMultipart()
+    msg['From'] = fromaddr
+    msg['To'] = toaddr
+    msg['Subject'] = "PYTHON PASSWORD"
+    msg.attach(MIMEText(registerPassword, 'plain'))
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(fromaddr, "BHAIbhai4725")
+    text = msg.as_string()
+    server.sendmail(fromaddr, toaddr, text)
+    server.quit()
+
     loginDAO.insertLogin(loginVO)
 
-    registerVO.register_LoginId=str(loginDAO.searchLoginId(loginVO)[0].values()[0])
     registerDAO.insertRegister(registerVO)
-
-    print("registerPassword=" + registerPassword)
-
-    fromaddr = "gesturebasedsmartcommunicator@gmail.com"
-
-    toaddr = loginVO.loginEmailId
-
-    msg = MIMEMultipart()
-
-    msg['From'] = fromaddr
-
-    msg['To'] = toaddr
-
-    msg['Subject'] = "PYTHON PASSWORD"
-
-    msg.attach(MIMEText(registerPassword, 'plain'))
-
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-
-    server.starttls()
-
-    server.login(fromaddr, "BHAIbhai4725")
-
-    text = msg.as_string()
-
-    server.sendmail(fromaddr, toaddr, text)
-
-    server.quit()
 
     return render_template('admin/login.html')

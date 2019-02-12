@@ -2,8 +2,10 @@ from wtforms import *
 
 class FeedbackVO:
     feedbackId=IntegerField
-    feedbackText=StringField
+    feedbackDescription=StringField
     feedbackRating=StringField
     feedbackDate=StringField
     feedbackTime=StringField
-    feedback_LoginId=StringField
+    feedbackActiveStatus=StringField
+    feedbackFrom_LoginId=StringField
+    feedbackTo_LoginId=StringField

@@ -33,9 +33,10 @@
                         <img src="../../static/adminResources/images/avatar-sign.png" alt="">
                     </div>
                     <header class="sign-title">Login In</header>
+                    {{ Logout }}
                     <div class="form-group">
                         {{ loginerrorDict1 }}
-                        <input type="email" name="loginEmailId" class="form-control" placeholder="E-Mail or Phone"/>
+                        <input type="email" name="loginEmail" class="form-control" placeholder="E-Mail or Phone"/>
                     </div>
                     <div class="form-group">
                         {{ loginerrorDict2 }}
@@ -51,7 +52,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-rounded">Sign in</button>
-                    <p class="sign-note">New to our website? <a href="{{ url_for('loadRegister') }}">Sign up</a></p>
+                    <p class="sign-note">Not have an account? <a href="{{ url_for('loadRegister') }}">Register</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->

@@ -2,6 +2,6 @@ from wtforms import *
 
 class LoginVO:
     loginId=IntegerField
-    loginEmailId=StringField
+    loginEmail=StringField
     loginPassword=StringField
     loginRole=StringField

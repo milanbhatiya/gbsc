@@ -31,30 +31,30 @@
             <div class="container-fluid">
                 <form class="sign-box" action="/insertRegister" method="post">
                     <div class="sign-avatar no-photo">&plus;</div>
-                    <header class="sign-title">Sign Up</header>
+                    <header class="sign-title">Organization Register</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="registerFirstname" placeholder="First Name"/>
+                        <input type="text" class="form-control" name="registerOrganizatonname" placeholder="Organization Name"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control"  name="registerLastname" placeholder="Last Name"/>
+                        <input type="email" class="form-control" name="registerEmail" placeholder="E-mail"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="registerEmailid" placeholder="E-mail"/>
+                        <input type="tel" class="form-control" name="registerContact" placeholder="Mobile No"/>
                     </div>
                     <div class="form-group">
                         <div class="form-control">
                           <label style="color: gray">
-                              <input type="radio" class="ml-2" name="registerGender" value="male" checked > Male
-                              <input type="radio" class="ml-3" name="registerGender" value="female"> Female
-                              <input type="radio" class="ml-3" name="registerGender" value="other"> Other
+                              <input type="radio" class="ml-2" name="registerCategory" value="government" checked > Governament
+                              <input type="radio" class="ml-3" name="registerCategory" value="private"> Private
+                              <input type="radio" class="ml-3" name="registerCaterory" value="Semi-govermenat"> Semi-Government
                           </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" name="registerAddress" placeholder="Address" rows="3" cols="10"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-rounded btn-success sign-up">Sign up</button>
-                    <p class="sign-note">Already have an account? <a href="{{ url_for('loadLogin') }}">Sign in</a></p>
+                    <button type="submit" class="btn btn-rounded btn-success sign-up">Reigster</button>
+                    <p class="sign-note">Already have an account? <a href="{{ url_for('loadLogin') }}">Login</a></p>
                     <!--<button type="button" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>-->
