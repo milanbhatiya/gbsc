@@ -5,7 +5,8 @@ from project.com.vo.DatasetVO import DatasetVO
 from werkzeug.utils import secure_filename
 import os
 
-@app.route('/addDataset')
+
+@app.route('/loadDataset')
 def loadDataset():
     try:
         if session['sessionloginDict']['loginRole'] == 'admin':
@@ -16,6 +17,7 @@ def loadDataset():
     except:
         flash('Plese Login First !', 'danger')
         return redirect(url_for('loadLogin'))
+
 
 @app.route('/insertDataset',methods=['POST'])
 def insertDataset():
@@ -48,6 +50,7 @@ def insertDataset():
     except:
         flash('Plese Login First !', 'danger')
         return redirect(url_for('loadLogin'))
+
 
 @app.route('/viewDataset')
 def viewDataset():
