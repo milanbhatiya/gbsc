@@ -5,3 +5,5 @@ class LoginVO:
     loginEmail=StringField
     loginPassword=StringField
     loginRole=StringField
+    forgotPassword=StringField
+    pwdDict=StringField

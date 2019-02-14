@@ -12,7 +12,7 @@ class DatasetDAO:
     def viewDataset(self, DatasetVO):
         connection = conn_db()
         cursor1 = connection.cursor()
-        cursor1.execute("SELECT * FROM datasetmaster WHERE datasetActiveStatus='activate' ")
+        cursor1.execute("SELECT * FROM datasetmaster WHERE datasetActiveStatus='active' ")
         datasetDict=cursor1.fetchall()
         connection.commit()
         cursor1.close()

@@ -33,13 +33,19 @@
                         <img src="../../static/adminResources/images/avatar-sign.png" alt="">
                     </div>
                     <header class="sign-title">Login In</header>
-                    {{ Logout }}
+                    {% with messages=get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category,message in messages %}
+                                <div class="alert alert-{{ category }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                     <div class="form-group">
-                        {{ loginerrorDict1 }}
-                        <input type="email" name="loginEmail" class="form-control" placeholder="E-Mail or Phone"/>
+                        <input type="email" name="loginEmail" class="form-control" placeholder="E-Mail"/>
                     </div>
                     <div class="form-group">
-                        {{ loginerrorDict2 }}
                         <input type="password" name="loginPassword" class="form-control" placeholder="Password"/>
                     </div>
                     <div class="form-group">
@@ -48,7 +54,7 @@
                             <label for="signed-in">Keep me signed in</label>
                         </div>
                         <div class="float-right reset">
-                            <a href="{{ url_for('resetPassword') }}">Reset Password</a>
+                            <a href="{{ url_for('forgotPassword') }}">Forgot Password</a>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-rounded">Sign in</button>
